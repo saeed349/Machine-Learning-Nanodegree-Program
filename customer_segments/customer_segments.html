@@ -12182,7 +12182,7 @@ div#notebook {
 <p><strong>Answer:</strong>
 Feature   : Grocery
 R^2 score : 0.5767</p>
-<p>It seems like this feature can explain the spending on other categories to an extent. Whereas some of the features like 'Milk' and 'Fresh' didn't have good R^2 score suggesting they are not as important as grocery in explaining the total variance in the feature set.</p>
+<p>It seems like this feature can explain the spending on other categories to an extent. Whereas some of the features like 'Milk' and 'Fresh' didn't have good R^2 score suggesting they are unique and important unlike grocery which can be replicated with other features suggested by the high R^2 score. Thus,'Grocery' feature is not necessary and informative compared to other features.</p>
 
 </div>
 </div>
@@ -20559,13 +20559,24 @@ RK5CYII=
 <p><strong>Answer:</strong></p>
 <p>Variance explained by 1st Component  =  44.30%</p>
 <p>Variance explained by 2nd Component  =  26.38%</p>
-<p>Total = 70.68%</p>
+<p><strong> Total variance by first 2 components = 70.68% </strong></p>
 <p>Variance explained by 3rd Component  =  12.31%</p>
 <p>Variance explained by 4th Component  =  10.12%</p>
-<p>Total = 93.14%</p>
-<p>We can see that the 1st component is heavily dependant on 'Detergents_paper' to explain the variance, whereas 'Delicatessan' is not very much used.</p>
-<p>Similarly, for 2nd Component 'Frozen', 'Fresh' and 'Delicatessan' are the main contributers.</p>
-<p>By looking at these contributions, we can see the preference of majority of the buyers.</p>
+<p><strong> Total variance by first 4 components = 93.11% </strong></p>
+<ul>
+<li><p>PC1: 
+Negatively correlates with spending in Milk, Grocery and Detergents_Paper which means customers with low spending in Milk would also have low spending in Grocery and Detergents Paper. The positive but small correlation with Fresh and Frozen spending combined with the high negative correlation with Milk, Grocery and Detergents_Paper suggests that it would be a local small cold storage.</p>
+</li>
+<li><p>PC2:
+Negatively correlates with spending in Fresh, Frozen and Delicatessen which means customers with low spending in Fresh would also have low spending in Frozen and Delicateseen and the component would suggest anything but a restaurent.</p>
+</li>
+<li><p>PC3:
+Negatively correlates with spending in Fresh and positively correlates with spending in Delicatessen which means customers with low spending in Fresh would have high spending in Delicatessen, such as Deli stores.</p>
+</li>
+<li><p>PC4:
+Positively correlates with spending in Milk and Grocery and negatively correlates with spending in Detergents_paper and Delicatessen,means that customers with high spending in Milk and Grocery would have low spending in Detergents_paper and Delicatessen, such as cafes.</p>
+</li>
+</ul>
 
 </div>
 </div>
@@ -23421,6 +23432,7 @@ Sample point 2 predicted to be in Cluster 0
 <p><strong>Answer:</strong></p>
 <p>'Customer Segment 0' Buys more 'Fresh' items while 'Customer Segment 1' buys a mixed bag of items imitating a reseller.</p>
 <p>Given the assumption that 'Fresh' food items are perishable, its likely that the wholesale distributor gets positive result from this experiment with the 'Customer Segment 1'. Because the shelf life of these 'Fresh' items might not be more than 1 day and a gap in delivery might leads to goods being perished which would lead to negative feedback from 'Customer Segment 0'.</p>
+<p>Thus, we should apply the A/B tests on the different customer segments so that we can better understand the results and their behaviour.</p>
 
 </div>
 </div>
